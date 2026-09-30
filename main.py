@@ -1,55 +1,119 @@
 import base64
+import json
 import os
 import re
+import urllib.parse
 import urllib.request
+import yaml
 
-# 这里配置公开节点聚合源（可以根据需要添加更多公开订阅源）
+# 抓取源：包含公开订阅
 SOURCES = [
     "https://raw.githubusercontent.com/freefq/free/master/v2",
     "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml",
 ]
 
-def fetch_nodes():
-    nodes = []
+def fetch_content(url):
     headers = {"User-Agent": "Mozilla/5.0"}
-    
-    for url in SOURCES:
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                content = resp.read().decode("utf-8", errors="ignore").strip()
-                
-                # 尝试 Base64 解密
-                try:
-                    padded = content + "=" * (-len(content) % 4)
-                    decoded = base64.b64decode(padded).decode("utf-8", errors="ignore")
-                    lines = decoded.splitlines()
-                except Exception:
-                    lines = content.splitlines()
-                
-                # 提取常见协议节点
-                for line in lines:
-                    line = line.strip()
-                    if re.match(r"^(vmess|vless|ss|ssr|trojan|hysteria2?):\/\/", line, re.I):
-                        nodes.append(line)
-        except Exception as e:
-            print(f"Fetch failed for {url}: {e}")
-            
-    # 去重
-    unique_nodes = list(set(nodes))
-    print(f"Total valid nodes fetched: {len(unique_nodes)}")
-    return unique_nodes
+    try:
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return resp.read().decode("utf-8", errors="ignore")
+    except Exception as e:
+        print(f"Error fetching {url}: {e}")
+        return ""
 
-def export_subscription(nodes):
+def parse_vmess(link):
+    try:
+        b64_data = link[8:]
+        padded = b64_data + "=" * (-len(b64_data) % 4)
+        info = json.loads(base64.b64decode(padded).decode("utf-8", errors="ignore"))
+        name = info.get("ps", "vmess-node").strip()
+        return {
+            "name": name,
+            "type": "vmess",
+            "server": info.get("add"),
+            "port": int(info.get("port")),
+            "uuid": info.get("id"),
+            "alterId": int(info.get("aid", 0)),
+            "cipher": "auto",
+            "network": info.get("net", "tcp"),
+            "tls": info.get("tls") == "tls",
+        }
+    except Exception:
+        return None
+
+def main():
     os.makedirs("dist", exist_ok=True)
-    content = "\n".join(nodes)
-    b64_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
-    
-    # 写入 dist/sub.txt
-    with open("dist/sub.txt", "w", encoding="utf-8") as f:
-        f.write(b64_content)
-    print("Subscription exported successfully to dist/sub.txt")
+    proxies = []
+    seen_names = set()
+
+    for url in SOURCES:
+        text = fetch_content(url)
+        if not text:
+            continue
+
+        # 尝试直接作为 clash yaml 解析
+        try:
+            data = yaml.safe_load(text)
+            if isinstance(data, dict) and "proxies" in data:
+                for p in data["proxies"]:
+                    if isinstance(p, dict) and p.get("name") and p["name"] not in seen_names:
+                        seen_names.add(p["name"])
+                        proxies.append(p)
+                continue
+        except Exception:
+            pass
+
+        # 尝试 Base64 解码提取节点
+        try:
+            padded = text.strip() + "=" * (-len(text.strip()) % 4)
+            decoded = base64.b64decode(padded).decode("utf-8", errors="ignore")
+            lines = decoded.splitlines()
+        except Exception:
+            lines = text.splitlines()
+
+        for line in lines:
+            line = line.strip()
+            if line.startswith("vmess://"):
+                node = parse_vmess(line)
+                if node and node["name"] not in seen_names:
+                    seen_names.add(node["name"])
+                    proxies.append(node)
+
+    proxy_names = [p["name"] for p in proxies] if proxies else ["DIRECT"]
+
+    clash_config = {
+        "port": 7890,
+        "socks-port": 7891,
+        "allow-lan": False,
+        "mode": "rule",
+        "log-level": "info",
+        "external-controller": "127.0.0.1:9090",
+        "proxies": proxies,
+        "proxy-groups": [
+            {
+                "name": "节点选择",
+                "type": "select",
+                "proxies": proxy_names
+            },
+            {
+                "name": "自动选择",
+                "type": "url-test",
+                "proxies": proxy_names,
+                "url": "http://www.gstatic.com/generate_204",
+                "interval": 300
+            }
+        ],
+        "rules": [
+            "GEOIP,CN,DIRECT",
+            "MATCH,节点选择"
+        ]
+    }
+
+    output_path = os.path.join("dist", "config.yaml")
+    with open(output_path, "w", encoding="utf-8") as f:
+        yaml.dump(clash_config, f, allow_unicode=True, sort_keys=False)
+    print(f"成功生成 Clash 配置: {len(proxies)} 个节点")
 
 if __name__ == "__main__":
-    node_list = fetch_nodes()
-    export_subscription(node_list)
+    main()
