@@ -52,7 +52,6 @@ def main():
         if not text:
             continue
 
-        # 尝试直接作为 clash yaml 解析
         try:
             data = yaml.safe_load(text)
             if isinstance(data, dict) and "proxies" in data:
@@ -64,7 +63,6 @@ def main():
         except Exception:
             pass
 
-        # 尝试 Base64 解码提取节点
         try:
             padded = text.strip() + "=" * (-len(text.strip()) % 4)
             decoded = base64.b64decode(padded).decode("utf-8", errors="ignore")
@@ -113,7 +111,7 @@ def main():
     output_path = os.path.join("dist", "config.yaml")
     with open(output_path, "w", encoding="utf-8") as f:
         yaml.dump(clash_config, f, allow_unicode=True, sort_keys=False)
-    print(f"成功生成 Clash 配置: {len(proxies)} 个节点")
+    print(f"Clash config generated: {len(proxies)} proxies")
 
 if __name__ == "__main__":
     main()
