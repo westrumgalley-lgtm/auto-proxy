@@ -6,10 +6,11 @@ import urllib.parse
 import urllib.request
 import yaml
 
-# 抓取源：包含公开订阅
+# 替换为高活跃、带完整测速的开源 Clash 节点池
 SOURCES = [
-    "https://raw.githubusercontent.com/freefq/free/master/v2",
-    "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml",
+    "https://raw.githubusercontent.com/aiboxeu/v2rayfree/main/v2",
+    "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/vmess.txt",
+    "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yaml",
 ]
 
 def fetch_content(url):
