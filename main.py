@@ -1,84 +1,48 @@
-import base64
-import json
 import os
-import re
-import urllib.parse
 import urllib.request
 import yaml
 
+# 优质公开 clash 节点订阅源
 SOURCES = [
-    "https://raw.githubusercontent.com/aiboxeu/v2rayfree/main/v2",
-    "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/vmess.txt",
+    "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
     "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yaml",
+    "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml"
 ]
 
-def fetch_content(url):
-    headers = {"User-Agent": "Mozilla/5.0"}
+def fetch_data(url):
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": "ClashforWindows/0.20.39"}
+    )
     try:
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        with urllib.request.urlopen(req, timeout=20) as resp:
             return resp.read().decode("utf-8", errors="ignore")
     except Exception as e:
-        print(f"Error fetching {url}: {e}")
+        print(f"Fetch failed for {url}: {e}")
         return ""
-
-def parse_vmess(link):
-    try:
-        b64_data = link[8:]
-        padded = b64_data + "=" * (-len(b64_data) % 4)
-        info = json.loads(base64.b64decode(padded).decode("utf-8", errors="ignore"))
-        name = info.get("ps", "vmess-node").strip()
-        return {
-            "name": name,
-            "type": "vmess",
-            "server": info.get("add"),
-            "port": int(info.get("port")),
-            "uuid": info.get("id"),
-            "alterId": int(info.get("aid", 0)),
-            "cipher": "auto",
-            "network": info.get("net", "tcp"),
-            "tls": info.get("tls") == "tls",
-        }
-    except Exception:
-        return None
 
 def main():
     os.makedirs("dist", exist_ok=True)
-    proxies = []
-    seen_names = set()
+    all_proxies = []
+    seen = set()
 
     for url in SOURCES:
-        text = fetch_content(url)
-        if not text:
+        content = fetch_data(url)
+        if not content:
             continue
-
         try:
-            data = yaml.safe_load(text)
-            if isinstance(data, dict) and "proxies" in data:
+            data = yaml.safe_load(content)
+            if isinstance(data, dict) and "proxies" in data and isinstance(data["proxies"], list):
                 for p in data["proxies"]:
-                    if isinstance(p, dict) and p.get("name") and p["name"] not in seen_names:
-                        seen_names.add(p["name"])
-                        proxies.append(p)
-                continue
-        except Exception:
-            pass
+                    if isinstance(p, dict) and p.get("name") and p["name"] not in seen:
+                        seen.add(p["name"])
+                        all_proxies.append(p)
+        except Exception as e:
+            print(f"Parse error for {url}: {e}")
 
-        try:
-            padded = text.strip() + "=" * (-len(text.strip()) % 4)
-            decoded = base64.b64decode(padded).decode("utf-8", errors="ignore")
-            lines = decoded.splitlines()
-        except Exception:
-            lines = text.splitlines()
+    print(f"Total valid proxies collected: {len(all_proxies)}")
 
-        for line in lines:
-            line = line.strip()
-            if line.startswith("vmess://"):
-                node = parse_vmess(line)
-                if node and node["name"] not in seen_names:
-                    seen_names.add(node["name"])
-                    proxies.append(node)
-
-    proxy_names = [p["name"] for p in proxies] if proxies else ["DIRECT"]
+    proxy_names = [p["name"] for p in all_proxies] if all_proxies else ["DIRECT"]
 
     clash_config = {
         "port": 7890,
@@ -86,8 +50,7 @@ def main():
         "allow-lan": False,
         "mode": "rule",
         "log-level": "info",
-        "external-controller": "127.0.0.1:9090",
-        "proxies": proxies,
+        "proxies": all_proxies,
         "proxy-groups": [
             {
                 "name": "节点选择",
@@ -108,10 +71,8 @@ def main():
         ]
     }
 
-    output_path = os.path.join("dist", "config.yaml")
-    with open(output_path, "w", encoding="utf-8") as f:
+    with open("dist/config.yaml", "w", encoding="utf-8") as f:
         yaml.dump(clash_config, f, allow_unicode=True, sort_keys=False)
-    print(f"Clash config generated: {len(proxies)} proxies")
 
 if __name__ == "__main__":
     main()
