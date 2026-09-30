@@ -6,7 +6,6 @@ import urllib.parse
 import urllib.request
 import yaml
 
-# 替换为高活跃、带完整测速的开源 Clash 节点池
 SOURCES = [
     "https://raw.githubusercontent.com/aiboxeu/v2rayfree/main/v2",
     "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Splitted-By-Protocol/vmess.txt",
