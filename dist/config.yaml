@@ -173,7 +173,7 @@ proxies:
   server: 57.129.113.16
   type: ss
 - cipher: chacha20-ietf-poly1305
-  name: 🇪🇸[www.v2nodes.com] ss-ES-1431...
+  name: 🏳[www.v2nodes.com] ss-
   password: WSyL4XTwNsdv
   port: 8388
   server: 108.181.121.226
@@ -205,7 +205,7 @@ proxies:
 - cipher: aes-256-gcm
   name: 🇬🇧[www.v2nodes.com] ss-GB-1289...
   password: LXchLsIwtCeUAUgu
-  port: 80
+  port: 443
   server: 149.102.149.207
   type: ss
 - cipher: aes-256-gcm
@@ -238,12 +238,6 @@ proxies:
   port: 31348
   server: 103.160.63.199
   type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 🇮🇳[www.v2nodes.com] ss-IN-1587...
-  password: Jeoq8ujfkqZKKvACQhoqBQ1PA3uq4242
-  port: 777
-  server: 45.149.114.171
-  type: ss
 - cipher: aes-256-gcm
   name: 🇮🇹[www.v2nodes.com] ss-IT-1549...
   password: itzvpn@321
@@ -265,8 +259,8 @@ proxies:
 - cipher: chacha20-ietf-poly1305
   name: '🇳🇱[www.v2nodes.com] ss-NL-1592... #1'
   password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 82.38.31.171
+  port: 443
+  server: 82.38.31.170
   type: ss
 - cipher: chacha20-ietf-poly1305
   name: 🇳🇱[www.v2nodes.com] ss-NL-1589...
@@ -292,12 +286,6 @@ proxies:
   port: 40022
   server: ruot.ayucloudservices.nl
   type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 🇸🇬[www.v2nodes.com] ss-SG-1581...
-  password: 9epp3o9ng8ej59uv
-  port: 14249
-  server: 45.128.12.20
-  type: ss
 - cipher: aes-256-gcm
   name: 🇹🇭[www.v2nodes.com] ss-TH-1591...
   password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
@@ -311,16 +299,10 @@ proxies:
   server: www.asamping.ir
   type: ss
 - cipher: chacha20-ietf-poly1305
-  name: 🇺🇸[www.v2nodes.com] ss-US-1592...
+  name: 🇺🇸[www.v2nodes.com] ss-US-1593...
   password: 792e0bdb-01db-450c-94c4-925151eb396e
   port: 20006
   server: ss.042.node-for-bigairport.win
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  name: '🇺🇸[www.v2nodes.com] ss-US-1592... #1'
-  password: 792e0bdb-01db-450c-94c4-925151eb396e
-  port: 20006
-  server: ss.043.node-for-bigairport.win
   type: ss
 - cipher: chacha20-ietf-poly1305
   name: 🇿🇦[www.v2nodes.com] ss-ZA-1336...
@@ -346,12 +328,19 @@ proxies:
   sni: nl.zhabulik.ru
   type: trojan
 - name: 🇩🇪[www.v2nodes.com] trojan-DE-...
+  password: UX82473651
+  port: 443
+  server: cuddly-sheepdog.rooster465.autos
+  skip-cert-verify: true
+  sni: cuddly-sheepdog.rooster465.autos
+  type: trojan
+- name: '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
   password: gHncxmRjWEJ7apX5XuXsHw4kGexMH_gU
   port: 443
   server: ger2.fytpn.com
   skip-cert-verify: false
   type: trojan
-- name: '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
+- name: '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
   password: UX82473651
   port: 443
   server: meet-goshawk.rooster465.autos
@@ -392,7 +381,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: /assignment
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #7'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #6'
   network: ws
   password: humanity
   port: 443
@@ -404,21 +393,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: /assignment
-- alpn:
-  - v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus
-  name: '🇫🇷[www.v2nodes.com] trojan-FR-... #2'
-  network: ws
-  password: humanity
-  port: 8443
-  server: 212.227.144.37
-  skip-cert-verify: false
-  sni: www.calmlunch.com
-  type: trojan
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: /assignment
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #3'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #2'
   network: ws
   password: humanity
   port: 443
@@ -430,7 +405,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: /assignment
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #4'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #3'
   network: ws
   password: humanity
   port: 443
@@ -441,7 +416,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: /assignment
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #5'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #4'
   network: ws
   password: humanity
   port: 2053
@@ -453,7 +428,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: /assignment
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #6'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #5'
   network: ws
   password: humanity
   port: 443
@@ -465,14 +440,14 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: '%2Fassignment'
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #8'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #7'
   password: humanity
   port: 443
   server: 165.215.250.14
   type: trojan
   ws-opts:
     path: '%2Fassignment'
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #9'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #8'
   network: ws
   password: humanity
   port: 443
@@ -484,7 +459,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: '%2Fassignment'
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #10'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #9'
   network: ws
   password: humanity
   port: 443
@@ -496,7 +471,7 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: '%2Fassignment'
-- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #11'
+- name: '🇫🇷[www.v2nodes.com] trojan-FR-... #10'
   network: ws
   password: humanity
   port: 443
@@ -616,8 +591,7 @@ proxies:
 - name: '🇯🇵[www.v2nodes.com] trojan-JP-... #10'
   password: UX82473651
   port: 443
-  server: prime-corgi.rooster465.autos
-  sni: prime-corgi.rooster465.autos
+  server: 54.249.55.154
   type: trojan
 - name: '🇯🇵[www.v2nodes.com] trojan-JP-... #11'
   password: UX82473651
@@ -674,14 +648,19 @@ proxies:
 - name: '🇯🇵[www.v2nodes.com] trojan-JP-... #20'
   password: UX82473651
   port: 443
-  server: comic-poodle.rooster465.autos
-  sni: comic-poodle.rooster465.autos
+  server: 54.249.36.167
   type: trojan
 - name: '🇯🇵[www.v2nodes.com] trojan-JP-... #21'
   password: UX82473651
   port: 443
   server: promoted-rattler.rooster465.autos
   sni: promoted-rattler.rooster465.autos
+  type: trojan
+- name: '🇯🇵[www.v2nodes.com] trojan-JP-... #22'
+  password: UX82473651
+  port: 443
+  server: integral-rodent.rooster465.autos
+  sni: integral-rodent.rooster465.autos
   type: trojan
 - name: 🇰🇷[www.v2nodes.com] trojan-KR-...
   password: UX82473651
@@ -741,8 +720,7 @@ proxies:
 - name: '🇰🇷[www.v2nodes.com] trojan-KR-... #8'
   password: UX82473651
   port: 443
-  server: delicate-buck.rooster465.autos
-  sni: delicate-buck.rooster465.autos
+  server: 52.78.203.191
   type: trojan
 - name: '🇰🇷[www.v2nodes.com] trojan-KR-... #9'
   password: UX82473651
@@ -795,15 +773,9 @@ proxies:
   port: 443
   server: 47.250.84.25
   type: trojan
-- name: 🇸🇪[www.v2nodes.com] trojan-SE-...
-  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
-  port: 4443
-  server: 77.74.123.106
-  sni: grape-test-italy.dynuddns.net
-  type: trojan
 - alpn:
   - http/1.1
-  name: 🇳🇱 荷兰 | NLD
+  name: 🇳🇱[www.v2nodes.com] trojan-NL-...
   network: ws
   password: humanity
   port: 443
@@ -811,12 +783,11 @@ proxies:
   skip-cert-verify: true
   sni: www.volumerOot.coM.
   type: trojan
-  udp: true
   ws-opts:
     headers:
       Host: www.volumerOot.coM.
     path: /assignment
-- name: '🇳🇱[www.v2nodes.com] trojan-NL-... #2'
+- name: '🇳🇱[www.v2nodes.com] trojan-NL-... #1'
   network: ws
   password: humanity
   port: 443
@@ -851,104 +822,122 @@ proxies:
   server: ger6.fytpn.com
   sni: ger6.fytpn.com
   type: trojan
+- name: 🇸🇪[www.v2nodes.com] trojan-SE-...
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  port: 4443
+  server: 77.74.123.106
+  sni: grape-test-italy.dynuddns.net
+  type: trojan
 - name: 🇸🇬[www.v2nodes.com] trojan-SG-...
+  password: UX82473651
+  port: 443
+  server: inspired-hound.rooster465.autos
+  skip-cert-verify: true
+  sni: inspired-hound.rooster465.autos
+  type: trojan
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #1'
+  password: UX82473651
+  port: 443
+  server: intense-wildcat.rooster465.autos
+  skip-cert-verify: true
+  sni: intense-wildcat.rooster465.autos
+  type: trojan
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #2'
+  password: UX82473651
+  port: 443
+  server: joint-ewe.rooster465.autos
+  skip-cert-verify: true
+  sni: joint-ewe.rooster465.autos
+  type: trojan
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #3'
   password: UX82473651
   port: 443
   server: moral-basilisk.rooster465.autos
   skip-cert-verify: true
   sni: moral-basilisk.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #1'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #4'
   password: UX82473651
   port: 443
   server: brave-tomcat.rooster465.autos
   skip-cert-verify: true
   sni: brave-tomcat.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #2'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #5'
   password: UX82473651
   port: 443
   server: fond-mammoth.rooster465.autos
   skip-cert-verify: true
   sni: fond-mammoth.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #3'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #6'
   password: UX82473651
   port: 443
   server: rested-seahorse.rooster465.autos
   skip-cert-verify: true
   sni: rested-seahorse.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #4'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #7'
   password: UX82473651
   port: 443
   server: ace-liger.rooster465.autos
   skip-cert-verify: true
   sni: ace-liger.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #5'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #8'
   password: UX82473651
   port: 443
   server: musical-mouse.rooster465.autos
   skip-cert-verify: true
   sni: musical-mouse.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #6'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #9'
   password: UX82473651
   port: 443
   server: present-ram.rooster465.autos
   skip-cert-verify: true
   sni: present-ram.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #7'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #10'
   password: UX82473651
   port: 443
   server: real-werewolf.rooster465.autos
   skip-cert-verify: true
   sni: real-werewolf.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #8'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #11'
   password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
   port: 8886
   server: 139.180.146.200
-  skip-cert-verify: true
   sni: 139.180.146.200
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #9'
+- name: 🏳[www.v2nodes.com] trojan-
   password: UX82473651
   port: 443
   server: 56.10.9.77
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #10'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #12'
   password: UX82473651
   port: 443
   server: holy-lamb.rooster465.autos
   sni: holy-lamb.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #11'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #13'
   password: UX82473651
   port: 443
   server: pet-antelope.rooster465.autos
   sni: pet-antelope.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #12'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #14'
   password: UX82473651
   port: 443
   server: desired-boxer.rooster465.autos
   sni: desired-boxer.rooster465.autos
   type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #13'
+- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #15'
   password: UX82473651
   port: 443
-  server: real-cardinal.rooster465.autos
-  sni: real-cardinal.rooster465.autos
-  type: trojan
-- name: '🇸🇬[www.v2nodes.com] trojan-SG-... #14'
-  password: UX82473651
-  port: 443
-  server: 18.143.92.167
-  skip-cert-verify: false
-  sni: glowing-marmoset.rooster465.autos
+  server: 52.221.218.179
   type: trojan
 - name: 🇺🇸[www.v2nodes.com] trojan-US-...
   password: aec8e5e3-bb81-4b22-8802-0b88c54997b3
@@ -956,20 +945,6 @@ proxies:
   server: us2.australiacaregroup.site
   skip-cert-verify: true
   sni: us2.australiacaregroup.site
-  type: trojan
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #1'
-  password: aec8e5e3-bb81-4b22-8802-0b88c54997b3
-  port: 10003
-  server: r627r8.vatilon.cc
-  skip-cert-verify: true
-  sni: r627r8.vatilon.cc
-  type: trojan
-- name: '🇺🇸[www.v2nodes.com] trojan-US-... #2'
-  password: UX82473651
-  port: 443
-  server: alert-titmouse.rooster465.autos
-  skip-cert-verify: true
-  sni: alert-titmouse.rooster465.autos
   type: trojan
 - cipher: aes-256-cfb
   name: 'tg频道:@ripaojiedian #1'
@@ -1256,78 +1231,57 @@ proxies:
   skip-cert-verify: true
   sni: m.ctrip.com
   type: trojan
-- cipher: aes-256-cfb
-  name: '🇩🇪 德国 | DEU #12'
-  password: amazonskr05
-  port: 443
-  server: 3.67.197.81
-  type: ss
-  udp: true
-- client-fingerprint: chrome
-  name: 🇺🇸US_17|1.0MB/s
-  network: ws
-  password: e20fd145-65f1-4aa3-96be-da0524bbb16e
-  port: 20230
-  server: us003.421421.xyz
-  skip-cert-verify: true
-  sni: www.alibaba.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/66.0.3359.181 Safari/537.36
-    path: /
-- name: 🇦🇹 奥地利 | AUT
+- alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  name: 🇳🇱NL_1|2.1MB/s
   network: ws
   password: humanity
   port: 443
-  server: 212.183.88.136
-  skip-cert-verify: true
-  sni: www.calmlunch.com
+  server: 172.66.40.99
+  skip-cert-verify: false
+  sni: www.trusteeforward.com
   type: trojan
   udp: true
   ws-opts:
     headers:
-      Host: www.calmlunch.com
+      User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/70.0.3538.67 Safari/537.36
     path: /assignment
-- name: '🇩🇪 德国 | DEU #10'
-  password: UX82473651
-  port: 443
-  server: cuddly-sheepdog.rooster465.autos
-  skip-cert-verify: true
-  sni: cuddly-sheepdog.rooster465.autos
-  type: trojan
-  udp: true
-- cipher: aes-128-gcm
-  name: '🇬🇧 英国 | GBR #1'
-  password: 9c51ca33-a332-4de5-8677-5624e940097c
-  port: 35016
-  server: ruot.ayucloudservices.nl
-  type: ss
-- cipher: aes-256-gcm
-  name: '🇬🇧 英国 | GBR #2'
-  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
-  port: 22084
-  server: ruot.ayucloudservices.nl
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: '🇬🇧 英国 | GBR #4'
-  password: 9c51ca33-a332-4de5-8677-5624e940097c
-  port: 22034
-  server: ruot.ayucloudservices.nl
-  type: ss
-- cipher: aes-128-gcm
-  name: '🇬🇧 英国 | GBR #5'
-  password: 70a5c510-d56d-43e7-b150-9c00c969bd50
-  port: 35194
-  server: ruot.ayucloudservices.nl
-  type: ss
-  udp: true
 - alterId: 0
   cipher: auto
   name: '🇭🇰 香港 | HKG #1'
+  network: ws
+  port: 23026
+  server: 47.244.120.197
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: b9de1bc9-baa7-41ac-86f7-ccd59695cb21
+  ws-opts:
+    headers:
+      Host: 47.244.120.197
+    path: /arki
+- alterId: 0
+  cipher: auto
+  name: '🇭🇰 香港 | HKG #2'
+  network: ws
+  port: 443
+  server: i2psm3knof5qjjix.v.3dns.vip
+  servername: i2psm3knof5qjjix.v.3dns.vip
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  ws-opts:
+    headers:
+      Host: i2psm3knof5qjjix.v.3dns.vip
+    path: /ws-vmess
+- alterId: 0
+  cipher: auto
+  name: '🇭🇰 香港 | HKG #3'
   network: ws
   port: 443
   server: 8.217.13.103
@@ -1341,26 +1295,9 @@ proxies:
     headers:
       Host: qtkdr8jxe3wefxjm.v.3dns.vip
     path: /ws-vmess
-- alpn:
-  - ''
-  alterId: 0
-  cipher: auto
-  name: '🇭🇰 香港 | HKG #2'
-  network: ws
-  port: 443
-  server: 47.76.44.32
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  udp: true
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  ws-opts:
-    headers:
-      Host: 93ucrn4i0pffuabk.v.3dns.vip
-    path: /ws-vmess
 - alterId: 0
   cipher: auto
-  name: '🇭🇰 香港 | HKG #3'
+  name: '🇭🇰 香港 | HKG #5'
   network: ws
   port: 443
   server: 47.83.207.148
@@ -1373,32 +1310,13 @@ proxies:
     headers:
       Host: VAH4URdZL3jDX5r2.v.3dns.vip
     path: /ws-vmess
-- alpn:
-  - h2
-  - http/1.1
-  alterId: 0
-  cipher: auto
-  name: 🇭🇰 香港 | HKG 5
-  network: ws
-  port: 443
-  server: 6jdvarazgu3qqr6q.v.3dns.vip
-  servername: 6JDvArazgU3qQR6Q.v.3dns.vip
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  udp: true
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  ws-opts:
-    headers:
-      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
-    path: /ws-vmess
 - alterId: 0
   cipher: auto
   name: '🇭🇰 香港 | HKG #6'
   network: ws
   port: 443
-  server: 8.218.195.61
-  servername: EX1oGt73NzPQKAc2.v.3dns.vip
+  server: 93ucrn4i0pffuabk.v.3dns.vip
+  servername: 93ucrn4i0pffuabk.v.3dns.vip
   skip-cert-verify: true
   tls: true
   type: vmess
@@ -1406,57 +1324,78 @@ proxies:
   uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   ws-opts:
     headers:
-      Host: EX1oGt73NzPQKAc2.v.3dns.vip
+      Host: 93ucrn4i0pffuabk.v.3dns.vip
     path: /ws-vmess
-- cipher: aes-256-gcm
-  name: '🇮🇳 印度 | IND #1'
-  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
-  port: 21187
-  server: ruot.ayucloudservices.nl
-  type: ss
-- cipher: aes-256-gcm
-  name: '🇷🇺 俄罗斯 | RUS #3'
-  password: 6b39ae3234dfd68b
-  port: 20221
-  server: 46.17.42.141
-  type: ss
-  udp: true
-- name: '🇸🇬 新加坡 | SGP #1'
+- name: '🇯🇵 日本 | JPN #1'
   password: UX82473651
   port: 443
-  server: joint-ewe.rooster465.autos
+  server: allowed-poodle.rooster465.autos
   skip-cert-verify: true
-  sni: joint-ewe.rooster465.autos
+  sni: allowed-poodle.rooster465.autos
   type: trojan
   udp: true
-- name: '🇸🇬 新加坡 | SGP #3'
-  password: UX82473651
-  port: 443
-  server: intense-wildcat.rooster465.autos
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  name: 🇯🇵 日本 | JPN 3
+  port: 36011
+  server: gz1.polymarket.party
   skip-cert-verify: true
-  sni: intense-wildcat.rooster465.autos
-  type: trojan
+  tls: false
+  type: vmess
   udp: true
-- name: '🇸🇬 新加坡 | SGP #4'
+  uuid: aec8e5e3-bb81-4b22-8802-0b88c54997b3
+- alpn:
+  - ''
+  alterId: 0
+  cipher: auto
+  name: '🇯🇵 日本 | JPN #3'
+  network: ws
+  port: 23801
+  server: gz1.polymarket.party
+  skip-cert-verify: true
+  tls: true
+  type: vmess
+  udp: true
+  uuid: aec8e5e3-bb81-4b22-8802-0b88c54997b3
+  ws-opts:
+    headers:
+      Host: us4.australiacaregroup.site
+    path: /vmess
+- name: '🇯🇵 日本 | JPN #5'
   password: UX82473651
   port: 443
-  server: inspired-hound.rooster465.autos
+  server: evident-ant.rooster465.autos
   skip-cert-verify: true
-  sni: inspired-hound.rooster465.autos
+  sni: evident-ant.rooster465.autos
   type: trojan
   udp: true
 - cipher: chacha20-ietf-poly1305
-  name: '🇸🇬 新加坡 | SGP #6'
+  name: '🇰🇷 韩国 | KOR #1'
   password: 7e68e32f-8015-4f37-9082-70e8b0b58043
   port: 8443
-  server: 47.129.227.153
+  server: 52.79.212.191
   type: ss
   udp: true
-- name: 🇺🇸 美国 | USA 3
+- name: 🇸🇬 新加坡 | SGP 3
+  network: ws
+  password: trojan
+  port: 8443
+  server: 104.18.35.86
+  skip-cert-verify: true
+  sni: longwanghen.pages.dev
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      Host: longwanghen.pages.dev
+    path: /
+- name: 🇺🇸 美国 | USA 2
   network: ws
   password: humanity
   port: 443
-  server: www.speedtest.net
+  server: 162.159.91.211
   skip-cert-verify: true
   sni: www.calmlunch.com
   type: trojan
@@ -1465,37 +1404,26 @@ proxies:
     headers:
       Host: www.calmlunch.com
     path: /assignment
-- name: '🇦🇹 奥地利 | AUT #1'
-  password: humanity
-  port: 443
-  server: 212.183.88.136
-  skip-cert-verify: true
-  sni: www.calmlunch.com
-  type: trojan
 - alterId: 0
   cipher: auto
-  name: '🇭🇰 香港 | HKG #5'
-  network: ws
-  port: 443
-  server: 6jdvarazgu3qqr6q.v.3dns.vip
-  tls: true
+  name: '🇯🇵 日本 | JPN #2'
+  network: tcp
+  port: 36011
+  server: gz1.polymarket.party
+  tls: false
   type: vmess
-  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-  ws-opts:
-    headers:
-      Host: 6JDvArazgU3qQR6Q.v.3dns.vip
-    path: /ws-vmess
-- name: '🇳🇱 荷兰 | NLD #1'
-  password: humanity
-  port: 443
+  uuid: aec8e5e3-bb81-4b22-8802-0b88c54997b3
+- name: '🇸🇬 新加坡 | SGP #2'
+  password: trojan
+  port: 8443
   server: 104.18.35.86
   skip-cert-verify: true
-  sni: www.volumerOot.coM.
+  sni: longwanghen.pages.dev
   type: trojan
-- name: '🇺🇸 美国 | USA #3'
+- name: '🇺🇸 美国 | USA #2'
   password: humanity
   port: 443
-  server: www.speedtest.net
+  server: 162.159.91.211
   skip-cert-verify: true
   sni: www.calmlunch.com
   type: trojan
@@ -1526,7 +1454,7 @@ proxy-groups:
   - 🇨🇦[www.v2nodes.com] ss-CA-1538...
   - 🇨🇭[www.v2nodes.com] ss-CH-1573...
   - 🇩🇪[www.v2nodes.com] ss-DE-1592...
-  - 🇪🇸[www.v2nodes.com] ss-ES-1431...
+  - 🏳[www.v2nodes.com] ss-
   - 🇫🇮[www.v2nodes.com] ss-FI-1203...
   - 🇫🇷[www.v2nodes.com] ss-FR-1536...
   - 🇬🇧[www.v2nodes.com] ss-GB-1451...
@@ -1537,7 +1465,6 @@ proxy-groups:
   - 🇭🇰[www.v2nodes.com] ss-HK-1576...
   - 🇭🇷[www.v2nodes.com] ss-HR-1593...
   - 🇮🇩[www.v2nodes.com] ss-ID-1553...
-  - 🇮🇳[www.v2nodes.com] ss-IN-1587...
   - 🇮🇹[www.v2nodes.com] ss-IT-1549...
   - 🇰🇷[www.v2nodes.com] ss-KR-1580...
   - 🇳🇱[www.v2nodes.com] ss-NL-1592...
@@ -1546,30 +1473,28 @@ proxy-groups:
   - 🇳🇴[www.v2nodes.com] ss-NO-1220...
   - 🇷🇴[www.v2nodes.com] ss-RO-1298...
   - 🇸🇬[www.v2nodes.com] ss-SG-1592...
-  - 🇸🇬[www.v2nodes.com] ss-SG-1581...
   - 🇹🇭[www.v2nodes.com] ss-TH-1591...
   - 🇹🇷[www.v2nodes.com] ss-TR-1567...
-  - 🇺🇸[www.v2nodes.com] ss-US-1592...
-  - '🇺🇸[www.v2nodes.com] ss-US-1592... #1'
+  - 🇺🇸[www.v2nodes.com] ss-US-1593...
   - 🇿🇦[www.v2nodes.com] ss-ZA-1336...
   - 🇿🇦[www.v2nodes.com] ss-ZA-1333...
   - 🇦🇪[www.v2nodes.com] trojan-AE-...
   - 🇩🇪[www.v2nodes.com] trojan-DE-...
   - '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
+  - '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
   - 🇪🇪[www.v2nodes.com] trojan-EE-...
   - '🇪🇪[www.v2nodes.com] trojan-EE-... #1'
   - 🇫🇮[www.v2nodes.com] trojan-FI-...
   - 🇫🇷[www.v2nodes.com] trojan-FR-...
-  - '🇫🇷[www.v2nodes.com] trojan-FR-... #7'
+  - '🇫🇷[www.v2nodes.com] trojan-FR-... #6'
   - '🇫🇷[www.v2nodes.com] trojan-FR-... #2'
   - '🇫🇷[www.v2nodes.com] trojan-FR-... #3'
   - '🇫🇷[www.v2nodes.com] trojan-FR-... #4'
   - '🇫🇷[www.v2nodes.com] trojan-FR-... #5'
-  - '🇫🇷[www.v2nodes.com] trojan-FR-... #6'
+  - '🇫🇷[www.v2nodes.com] trojan-FR-... #7'
   - '🇫🇷[www.v2nodes.com] trojan-FR-... #8'
   - '🇫🇷[www.v2nodes.com] trojan-FR-... #9'
   - '🇫🇷[www.v2nodes.com] trojan-FR-... #10'
-  - '🇫🇷[www.v2nodes.com] trojan-FR-... #11'
   - 🇭🇰[www.v2nodes.com] trojan-HK-...
   - 🇮🇩[www.v2nodes.com] trojan-ID-...
   - 🇮🇪[www.v2nodes.com] trojan-IE-...
@@ -1597,6 +1522,7 @@ proxy-groups:
   - '🇯🇵[www.v2nodes.com] trojan-JP-... #19'
   - '🇯🇵[www.v2nodes.com] trojan-JP-... #20'
   - '🇯🇵[www.v2nodes.com] trojan-JP-... #21'
+  - '🇯🇵[www.v2nodes.com] trojan-JP-... #22'
   - 🇰🇷[www.v2nodes.com] trojan-KR-...
   - '🇰🇷[www.v2nodes.com] trojan-KR-... #1'
   - '🇰🇷[www.v2nodes.com] trojan-KR-... #2'
@@ -1615,12 +1541,12 @@ proxy-groups:
   - '🇰🇷[www.v2nodes.com] trojan-KR-... #15'
   - '🇰🇷[www.v2nodes.com] trojan-KR-... #16'
   - 🇲🇾[www.v2nodes.com] trojan-MY-...
-  - 🇸🇪[www.v2nodes.com] trojan-SE-...
-  - 🇳🇱 荷兰 | NLD
-  - '🇳🇱[www.v2nodes.com] trojan-NL-... #2'
+  - 🇳🇱[www.v2nodes.com] trojan-NL-...
+  - '🇳🇱[www.v2nodes.com] trojan-NL-... #1'
   - 🇵🇱[www.v2nodes.com] trojan-PL-...
   - '🇵🇱[www.v2nodes.com] trojan-PL-... #1'
   - 🇷🇴[www.v2nodes.com] trojan-RO-...
+  - 🇸🇪[www.v2nodes.com] trojan-SE-...
   - 🇸🇬[www.v2nodes.com] trojan-SG-...
   - '🇸🇬[www.v2nodes.com] trojan-SG-... #1'
   - '🇸🇬[www.v2nodes.com] trojan-SG-... #2'
@@ -1633,12 +1559,12 @@ proxy-groups:
   - '🇸🇬[www.v2nodes.com] trojan-SG-... #9'
   - '🇸🇬[www.v2nodes.com] trojan-SG-... #10'
   - '🇸🇬[www.v2nodes.com] trojan-SG-... #11'
+  - 🏳[www.v2nodes.com] trojan-
   - '🇸🇬[www.v2nodes.com] trojan-SG-... #12'
   - '🇸🇬[www.v2nodes.com] trojan-SG-... #13'
   - '🇸🇬[www.v2nodes.com] trojan-SG-... #14'
+  - '🇸🇬[www.v2nodes.com] trojan-SG-... #15'
   - 🇺🇸[www.v2nodes.com] trojan-US-...
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #1'
-  - '🇺🇸[www.v2nodes.com] trojan-US-... #2'
   - 'tg频道:@ripaojiedian #1'
   - 🇭🇰 香港|@ripaojiedian
   - 🇭🇰 香港3|@ripaojiedian
@@ -1664,30 +1590,22 @@ proxy-groups:
   - 美国2|@ripaojiedian
   - 台湾|@ripaojiedian
   - 韩国|@ripaojiedian
-  - '🇩🇪 德国 | DEU #12'
-  - 🇺🇸US_17|1.0MB/s
-  - 🇦🇹 奥地利 | AUT
-  - '🇩🇪 德国 | DEU #10'
-  - '🇬🇧 英国 | GBR #1'
-  - '🇬🇧 英国 | GBR #2'
-  - '🇬🇧 英国 | GBR #4'
-  - '🇬🇧 英国 | GBR #5'
+  - 🇳🇱NL_1|2.1MB/s
   - '🇭🇰 香港 | HKG #1'
   - '🇭🇰 香港 | HKG #2'
   - '🇭🇰 香港 | HKG #3'
-  - 🇭🇰 香港 | HKG 5
-  - '🇭🇰 香港 | HKG #6'
-  - '🇮🇳 印度 | IND #1'
-  - '🇷🇺 俄罗斯 | RUS #3'
-  - '🇸🇬 新加坡 | SGP #1'
-  - '🇸🇬 新加坡 | SGP #3'
-  - '🇸🇬 新加坡 | SGP #4'
-  - '🇸🇬 新加坡 | SGP #6'
-  - 🇺🇸 美国 | USA 3
-  - '🇦🇹 奥地利 | AUT #1'
   - '🇭🇰 香港 | HKG #5'
-  - '🇳🇱 荷兰 | NLD #1'
-  - '🇺🇸 美国 | USA #3'
+  - '🇭🇰 香港 | HKG #6'
+  - '🇯🇵 日本 | JPN #1'
+  - 🇯🇵 日本 | JPN 3
+  - '🇯🇵 日本 | JPN #3'
+  - '🇯🇵 日本 | JPN #5'
+  - '🇰🇷 韩国 | KOR #1'
+  - 🇸🇬 新加坡 | SGP 3
+  - 🇺🇸 美国 | USA 2
+  - '🇯🇵 日本 | JPN #2'
+  - '🇸🇬 新加坡 | SGP #2'
+  - '🇺🇸 美国 | USA #2'
 - name: 自动选择
   type: url-test
   proxies: *id001
